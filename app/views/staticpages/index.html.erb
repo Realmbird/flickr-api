@@ -1,0 +1,10 @@
+<%= form_with url: "/staticpages", method: :get do |form| %>
+  <%= form.label :user_id, "Flickr User Id:" %>
+  <%= form.text_field :user_id %>
+  <%= form.submit "Search" %>
+<% end %>
+<% @photos.each do |photo| %>
+  <%= image_tag "https://live.staticflickr.com/#{photo.server}/#{photo.id}_#{photo.secret}.jpg" %>
+ 
+
+<% end %>
